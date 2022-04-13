@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number" id="item">
+    <input type="button" onclick="add()" value="Add">
+    <input type="button" onclick="display()" value="display">
+
+    <div id="result">
+
+    </div>
+
+
+    <script>
+        var arr = [],index = 0,added=0;
+        function add()
+        {
+            let ele = document.getElementById('item');
+            arr[index] = ele.value;
+            index++;
+            ele.value = '';
+        }
+        function display()
+        {
+            let res = document.getElementById('result');
+            let displayString = res.innerHTML;
+            for(let i=added;i<index;i++)
+            {
+                displayString += `Element ${i} = ${arr[i]} <br/>`
+                added++;
+            }
+            res.innerHTML = displayString;
+
+        }
+    </script>
+
+
+</body>
+</html>
